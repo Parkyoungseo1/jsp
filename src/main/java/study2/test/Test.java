@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
 @WebServlet("/study2/test")
-public class Test extends HttpServlet{
+public class Test extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Test.java(서블릿파일)");
 		
-		String msg= "Good Morning";
-//		response.sendRedirect(request.getContextPath()+"/WEB-INF/study2/test/test.jsp?msg="+msg);
+		String msg = "Good Morning";
+		//response.sendRedirect(request.getContextPath()+"/WEB-INF/study2/test/test.jsp?msg="+msg);
 		
 		request.setAttribute("msg", msg);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/study2/test/test2.jsp");
@@ -25,7 +25,7 @@ public class Test extends HttpServlet{
 	}
 	
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
 }
