@@ -1,4 +1,4 @@
-package study2;
+package board;
 
 import java.io.IOException;
 
@@ -6,22 +6,17 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import study.database.LoginDAO;
-import study.database.LoginVO;
-
-public class HoewonDeleteCommand implements StudyInterface {
+public class BoardReplyDeleteCommand implements BoardInterface {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int idx = request.getParameter("idx")==null ? 0 : Integer.parseInt(request.getParameter("idx"));
 		
-		LoginDAO dao = new LoginDAO();
+		BoardDAO dao = new BoardDAO();
 		
-		LoginVO vo = dao.getLoginIdxSearch(idx);
+		int res = dao.setBoardReplyDelete(idx);
 		
-		dao.setLoginDelete(vo.getMid());
-		
-		response.getWriter().write("1");
+		response.getWriter().write(res + "");
 	}
 
 }

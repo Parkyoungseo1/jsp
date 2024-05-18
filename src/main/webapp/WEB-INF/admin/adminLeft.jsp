@@ -23,13 +23,13 @@
   <hr/>
   <div>
     <h5>게시판</h5>
-    <div><a href="BoardList.bo" target="adminContent">게시판리스트</a></div>
+    <div><a href="BoardList.ad" target="adminContent">게시판리스트</a></div>
   </div>
   <hr/>
   <div>
     <h5>회원관리</h5>
     <div><a href="MemberList.ad" target="adminContent">회원리스트</a></div>
-    <div><a href="#" target="adminContent">신고리스트</a></div>
+    <div><a href="ComplaintList.ad" target="adminContent">신고리스트</a></div>
   </div>
   <hr/>
 </div>
